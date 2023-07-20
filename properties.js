@@ -82,6 +82,35 @@ $(document).ready(function() {
       	// If already have details
     		$('#properties_text').addClass('show');
       }
+      
+      // Fill forms with existing data
+      if (details['1']){
+      	$('#'+ details['1']).prop("checked", true);
+      }
+      if (details['2']) {
+        details['2'].forEach(checkBox=>{
+        	$(`input[value=${checkBox}]`).attr("checked", "checked")
+        	//$(`input[value=${checkBox}]`).attr("disabled", true)
+				})
+      }
+      if (details['3']) {
+      	details['3'].forEach(checkBox=>{
+        	$(`input[value=${checkBox}]`).attr("checked", "checked")
+        	//$(`input[value=${checkBox}]`).attr("disabled", true)
+				})
+      } 
+      if (details['4']) {
+      	$('#bed_'+ details['4']).prop("checked", true);
+      } 
+      if (details['5']) {
+      	$('#bath_'+ details['5']).prop("checked", true);
+      } 
+      if (details['6']){
+      	$('#filter_first_name').val(details['6']['n']);
+        $('#filter_last_name').val(details['6']['ln']);
+        $('#filter_email').val(details['6']['em']);
+        $('#filter_phone').val(details['6']['ph']);
+      }
     });
   } else {
   	// Set placeholder email
@@ -92,6 +121,8 @@ $(document).ready(function() {
     $('#question1').addClass('show');
   }
 });
+
+
 
 // Function to get a random number
 function getRandomSixDigitNumber() {
@@ -118,6 +149,10 @@ $('#question1').each(function (i, el) {
       $('#q1').val('1');
       form = $(e.target);
       var data = convertFormToJSON(form);
+	
+	// Display question 2
+      	$('#question1').removeClass('show');
+      	$('#question2').addClass('show');
       
       // Save to CRM
       fetch("https://yt9f9a3c19.execute-api.us-east-1.amazonaws.com/default/GOF_Filters",{
@@ -135,9 +170,6 @@ $('#question1').each(function (i, el) {
           $('.h_hid').val(hid);
         }
         
-        // Display question 2
-      	$('#question1').removeClass('show');
-      	$('#question2').addClass('show');
       });
    });
 });
@@ -148,6 +180,10 @@ $('#question2').each(function (i, el) {
       $('#q2').val('2');
       form = $(e.target);
       var data = convertFormToJSON(form);
+
+	// Display question 3
+      	$('#question2').removeClass('show');
+      	$('#question3').addClass('show');
       
       // Save to CRM
       fetch("https://yt9f9a3c19.execute-api.us-east-1.amazonaws.com/default/GOF_Filters",{
@@ -165,9 +201,6 @@ $('#question2').each(function (i, el) {
           $('.h_hid').val(hid);
         }
         
-        // Display question 3
-      	$('#question2').removeClass('show');
-      	$('#question3').addClass('show');
       });
    });
 });
@@ -178,6 +211,10 @@ $('#question3').each(function (i, el) {
       $('#q3').val('3');
       form = $(e.target);
       var data = convertFormToJSON(form);
+
+	// Display question 4
+      	$('#question3').removeClass('show');
+      	$('#question4').addClass('show');
       
       // Save to CRM
       fetch("https://yt9f9a3c19.execute-api.us-east-1.amazonaws.com/default/GOF_Filters",{
@@ -195,9 +232,6 @@ $('#question3').each(function (i, el) {
           $('.h_hid').val(hid);
         }
         
-        // Display question 4
-      	$('#question3').removeClass('show');
-      	$('#question4').addClass('show');
       });
    });
 });
@@ -208,6 +242,10 @@ $('#question4').each(function (i, el) {
       $('#q4').val('4');
       form = $(e.target);
       var data = convertFormToJSON(form);
+
+	// Display question 5
+      	$('#question4').removeClass('show');
+      	$('#question5').addClass('show');
       
       // Save to CRM
       fetch("https://yt9f9a3c19.execute-api.us-east-1.amazonaws.com/default/GOF_Filters",{
@@ -225,9 +263,6 @@ $('#question4').each(function (i, el) {
           $('.h_hid').val(hid);
         }
         
-        // Display question 5
-      	$('#question4').removeClass('show');
-      	$('#question5').addClass('show');
       });
    });
 });
