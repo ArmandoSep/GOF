@@ -309,6 +309,7 @@ function logEvent(eventName) {
   })
 }
 
+
 // CTA functionality
 $('#noprop_cta').click(function(){
 		const search = $('#cta_search').val();
