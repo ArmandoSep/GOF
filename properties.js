@@ -50,7 +50,7 @@ $(document).ready(function() {
   if (hid){
   	$('.h_hid').val(hid);
   	// Get contact details
-    fetch("",{
+    fetch("https://9ng91ox19k.execute-api.us-east-1.amazonaws.com/default/GOF_Verify",{
       method: 'POST',
       headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
       body: JSON.stringify({'hid':hid}),
