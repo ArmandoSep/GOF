@@ -351,7 +351,7 @@ $('#close_filters').click(function(){
     // show text
     $('#properties_text').addClass('show');
     // KPI
-    //logEvent('Hid filters');
+    logEvent('Hid filters');
 });
 // Function to show filters
 $('#show_filters').click(function(){
@@ -359,8 +359,12 @@ $('#show_filters').click(function(){
     $('#properties_text').removeClass('show');
     // show filters
     $('#filter_survey').addClass('show');
+    // if none of the children have the class show, display question 1
+    if (!$('.filter_question').hasClass("show")){
+    	$('#question1').addClass('show');
+    }
     // KPI
-    //logEvent('Opened filters');
+    logEvent('Opened filters');
 });
 
 // CTA functionality
