@@ -309,6 +309,24 @@ function logEvent(eventName) {
   })
 }
 
+// Function to close filters
+$('#close_filters').click(function(){
+		//hide filters
+    $('#filter_survey').removeClass('show');
+    // show text
+    $('#properties_text').addClass('show');
+    // KPI
+    //logEvent('Hid filters');
+});
+// Function to show filters
+$('#show_filters').click(function(){
+		//hide text
+    $('#properties_text').removeClass('show');
+    // show filters
+    $('#filter_survey').addClass('show');
+    // KPI
+    //logEvent('Opened filters');
+});
 
 // CTA functionality
 $('#noprop_cta').click(function(){
