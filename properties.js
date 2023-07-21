@@ -379,9 +379,11 @@ $('#contact_form').each(function (i, el) {
         
         // Run KPI
         logEvent('Contact form submission');
-            
+        
         // Display calendar scheduler
-        // TODO
+        $('#contact_title').html('When should we reach out back?');
+        $('#contact_form').removeClass('show');
+        $('#calendar_div').addClass('show');
         
         // Save to CRM
         fetch("https://spq03lik42.execute-api.us-east-1.amazonaws.com/default/GOF_Contact",{
@@ -398,7 +400,7 @@ $('#contact_form').each(function (i, el) {
 
 // Function to close filters
 $('#close_filters').click(function(){
-        //hide filters
+    //hide filters
     $('#filter_survey').removeClass('show');
     // show text
     $('#properties_text').addClass('show');
@@ -422,6 +424,9 @@ $('#show_filters').click(function(){
 // CTA functionality
 $('#noprop_cta').click(function(){
     const search = $('#cta_search').val();
+    // Show the form
+    $('#contact_form').addClass('show');
+    $('#calendar_div').removeClass('show');
     // Prefill notes
     $('#cta_note').val(`Hello! I‘m looking for an owner-financed property near ${search} `)
     //show modal
@@ -433,6 +438,9 @@ $('#noprop_cta').click(function(){
 });
 $('#lets_talk_cta').click(function(){
     const search = $('#cta_search').val();
+    // Show the form
+    $('#contact_form').addClass('show');
+    $('#calendar_div').removeClass('show');
     // Prefill notes
     $('#cta_note').val(`Hello! I‘m looking for an owner-financed property near ${search} `)
         //show modal
@@ -444,6 +452,9 @@ $('#lets_talk_cta').click(function(){
 });
 $('#cta_properties_text').click(function(){
     const search = $('#cta_search').val();
+    // Show the form
+    $('#contact_form').addClass('show');
+    $('#calendar_div').removeClass('show');
     // Prefill notes
     $('#cta_note').val(`Hello! I‘m looking for an owner-financed property near ${search} `)
         //show modal
