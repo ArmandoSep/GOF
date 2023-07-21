@@ -127,6 +127,7 @@ $(document).ready(function() {
     const randomSixDigitNumber = getRandomSixDigitNumber();
     $('.prov_email').val(`${randomSixDigitNumber}@gmail.com`)
   	// show survey
+    $('#properties_text').removeClass('show');
     $('#filter_survey').addClass('show');
     $('#question1').addClass('show');
   }
