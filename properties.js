@@ -109,6 +109,11 @@ $(document).ready(function() {
         $('#filter_last_name').val(details['6']['ln']);
         $('#filter_email').val(details['6']['em']);
         $('#filter_phone').val(details['6']['ph']);
+	// Also prepopulate the contact form
+	$('#cta_first_name').val(details['6']['n']);
+        $('#cta_last_name').val(details['6']['ln']);
+        $('#cta_email').val(details['6']['em']);
+        $('#cta_phone').val(details['6']['ph']);
       }
     });
   } else {
@@ -342,6 +347,33 @@ function logEvent(eventName) {
     body: JSON.stringify({'t':eventName, 'hid':hid, 'search':search}),
   })
 }
+
+// Function to process the  contact form submission
+$('#contact_form').each(function (i, el) {
+    var form = $(el);
+    form.submit(function (e) {
+      e.preventDefault();
+      form = $(e.target);
+      var data = convertFormToJSON(form);
+      
+      // Run KPI
+      logEvent('Contact form submission');
+	    
+      // Display calendar scheduler
+      // TODO
+      
+      // Save to CRM
+      fetch("https://spq03lik42.execute-api.us-east-1.amazonaws.com/default/GOF_Contact",{
+        method: 'POST',
+        headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+        body: data,
+      })
+      .then(res => res.json())
+      .then(json => {
+        const response = json;
+      });
+   });
+});
 
 // Function to close filters
 $('#close_filters').click(function(){
