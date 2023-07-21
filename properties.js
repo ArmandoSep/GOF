@@ -408,7 +408,7 @@ $('#show_filters').click(function(){
 $('#noprop_cta').click(function(){
 		const search = $('#cta_search').val();
 		// Prefill notes
-    $('#cta_note').val(`Hello! I'm looking for an owner-financed property near ${search} `)
+    $('#cta_note').val(`Hello! I‘m looking for an owner-financed property near ${search} `)
 		//show modal
     $('#cta_modal').attr('style', 'display:flex');
     // Hidden fields
@@ -419,7 +419,7 @@ $('#noprop_cta').click(function(){
 $('#lets_talk_cta').click(function(){
     const search = $('#cta_search').val();
     // Prefill notes
-    $('#cta_note').val(`Hello! I'm looking for an owner-financed property near ${search} `)
+    $('#cta_note').val(`Hello! I‘m looking for an owner-financed property near ${search} `)
 		//show modal
     $('#cta_modal').attr('style', 'display:flex');
     // Hidden fields
@@ -430,7 +430,7 @@ $('#lets_talk_cta').click(function(){
 $('#cta_properties_text').click(function(){
     const search = $('#cta_search').val();
     // Prefill notes
-    $('#cta_note').val(`Hello! I'm looking for an owner-financed property near ${search} `)
+    $('#cta_note').val(`Hello! I‘m looking for an owner-financed property near ${search} `)
 		//show modal
     $('#cta_modal').attr('style', 'display:flex');
     // Hidden fields
