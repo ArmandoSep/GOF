@@ -58,6 +58,7 @@ $(document).ready(function() {
     .then(res => res.json())
     .then(json => {
       const details = json;
+      console.log(details);
       if (!details['1']){
       	// show form
       	$('#filter_survey').addClass('show');
@@ -85,19 +86,17 @@ $(document).ready(function() {
       
       // Fill forms with existing data
       if (details['1']){
-      	$('#'+ details['1']).prop("checked", true);
+      	$('#'+ details['1']).prop('checked', true);
       }
       if (details['2']) {
-        details['2'].forEach(checkBox=>{
-        	$(`input[value=${checkBox}]`).attr("checked", "checked")
-        	//$(`input[value=${checkBox}]`).attr("disabled", true)
-				})
+				details['2'].forEach(checkBox=>{
+			    $('#' + checkBox).prop('checked', true);
+			  })
       }
       if (details['3']) {
       	details['3'].forEach(checkBox=>{
-        	$(`input[value=${checkBox}]`).attr("checked", "checked")
-        	//$(`input[value=${checkBox}]`).attr("disabled", true)
-				})
+			    $('#' + checkBox).prop('checked', true);
+			  })
       } 
       if (details['4']) {
       	$('#bed_'+ details['4']).prop("checked", true);
