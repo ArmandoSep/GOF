@@ -382,7 +382,7 @@ $('#close_filters').click(function(){
     // show text
     $('#properties_text').addClass('show');
     // KPI
-    logEvent('Hid filters');
+    logEvent('Hide filters');
 });
 // Function to show filters
 $('#show_filters').click(function(){
