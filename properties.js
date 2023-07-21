@@ -394,6 +394,7 @@ $('#contact_form').each(function (i, el) {
         .then(res => res.json())
         .then(json => {
             const response = json;
+            $('#contact_form').reset();
         });
     });
 });
