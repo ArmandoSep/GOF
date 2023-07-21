@@ -47,13 +47,14 @@ $(document).ready(function() {
   
   // Show filter survey
   const hid = Cookies.get('hid');
-  if (hid){
+  const prov_email = $('.prov_email').val()
+  if (hid || prov_email){
   	$('.h_hid').val(hid);
   	// Get contact details
     fetch("https://9ng91ox19k.execute-api.us-east-1.amazonaws.com/default/GOF_Verify",{
       method: 'POST',
       headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
-      body: JSON.stringify({'hid':hid}),
+      body: JSON.stringify({'hid':hid, 'prov_email':prov_email}),
     })
     .then(res => res.json())
     .then(json => {
@@ -121,6 +122,11 @@ $(document).ready(function() {
         $('#cta_last_name').val(details['6']['ln']);
         $('#cta_email').val(details['6']['em']);
         $('#cta_phone').val(details['6']['ph']);
+      }
+      if (details['hid']){
+	// populate hid
+      	Cookies.set('hid', details['hid'], { expires: 300 });
+        $('.h_hid').val(details['hid']);
       }
     });
   } else {
