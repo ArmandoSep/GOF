@@ -111,6 +111,7 @@ $(document).ready(function() {
       	$('#bath_'+ details['5']).prop("checked", true);
       } 
       if (details['6']){
+	// populate question 6
       	$('#filter_first_name').val(details['6']['n']);
         $('#filter_last_name').val(details['6']['ln']);
         $('#filter_email').val(details['6']['em']);
@@ -320,6 +321,11 @@ $('#question6').each(function (i, el) {
       $('#question6').removeClass('show');
       $('#filter_survey').removeClass('show');
       $('#properties_text').addClass('show');
+      // Also prepopulate the contact form
+	$('#cta_first_name').val(data['first_name']);
+        $('#cta_last_name').val(data['last_name']);
+        $('#cta_email').val(data['r_email']);
+        $('#cta_phone').val(data['phone']);
       
       // Save to CRM
       fetch("https://yt9f9a3c19.execute-api.us-east-1.amazonaws.com/default/GOF_Filters",{
