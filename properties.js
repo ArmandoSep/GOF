@@ -58,30 +58,36 @@ $(document).ready(function() {
     .then(res => res.json())
     .then(json => {
       const details = json;
-      console.log(details);
       if (!details['1']){
+	// Hide text section
+    	$('#properties_text').removeClass('show');
       	// show form
       	$('#filter_survey').addClass('show');
     		$('#question1').addClass('show');
       } else if (!details['2']) {
+	// Hide text section
+    	$('#properties_text').removeClass('show');
       	// show form
       	$('#filter_survey').addClass('show');
     		$('#question2').addClass('show');
       } else if (!details['3']) {
+	// Hide text section
+    	$('#properties_text').removeClass('show');
       	// show form
       	$('#filter_survey').addClass('show');
     		$('#question3').addClass('show');
       } else if (!details['4']) {
+	// Hide text section
+    	$('#properties_text').removeClass('show');
       	// show form
       	$('#filter_survey').addClass('show');
     		$('#question4').addClass('show');
       } else if (!details['5']) {
+	// Hide text section
+    	$('#properties_text').removeClass('show');
       	// show form
       	$('#filter_survey').addClass('show');
     		$('#question5').addClass('show');
-      } else {
-      	// If already have details
-    		$('#properties_text').addClass('show');
       }
       
       // Fill forms with existing data
