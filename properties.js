@@ -402,7 +402,7 @@ $('#show_filters').click(function(){
 $('#noprop_cta').click(function(){
 		const search = $('#cta_search').val();
 		// Prefill notes
-    $('#cta_note').val(`Hello! I'm looking for properties near ${search} `)
+    $('#cta_note').val(`Hello! I'm looking for an owner-financed property near ${search} `)
 		//show modal
     $('#cta_modal').attr('style', 'display:flex');
     // Hidden fields
@@ -411,13 +411,24 @@ $('#noprop_cta').click(function(){
     logEvent('CTA No Prop');
 });
 $('#lets_talk_cta').click(function(){
-		const search = $('#cta_search').val();
-		// Prefill notes
-    $('#cta_note').val(`Hello! I'm looking for properties near ${search} `)
+    const search = $('#cta_search').val();
+    // Prefill notes
+    $('#cta_note').val(`Hello! I'm looking for an owner-financed property near ${search} `)
 		//show modal
     $('#cta_modal').attr('style', 'display:flex');
     // Hidden fields
     $('#cta_source').val('Lets talk');
     // KPI
     logEvent('CTA Lets talk');
+});
+$('#cta_properties_text').click(function(){
+    const search = $('#cta_search').val();
+    // Prefill notes
+    $('#cta_note').val(`Hello! I'm looking for an owner-financed property near ${search} `)
+		//show modal
+    $('#cta_modal').attr('style', 'display:flex');
+    // Hidden fields
+    $('#cta_source').val('Cant find ideal home');
+    // KPI
+    logEvent('CTA Cant find ideal home');
 });
