@@ -47,10 +47,15 @@ $(document).ready(function() {
   
   // Show filter survey
   const hid = Cookies.get('hid');
-  const prov_email = $('.prov_email').val()
+  const prov_email = Cookies.get('pe');
   if (hid || prov_email){
+     if (hid) {
   	$('.h_hid').val(hid);
-  	// Get contact details
+     }
+     if (prov_email) {
+  	$('.prov_email').val(prov_email)
+     } 
+    // Get contact details
     fetch("https://9ng91ox19k.execute-api.us-east-1.amazonaws.com/default/GOF_Verify",{
       method: 'POST',
       headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
